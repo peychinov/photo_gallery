@@ -5,15 +5,17 @@ PhotoGallery::Application.routes.draw do
 
   get "home/contact_us"
 
-  resources :users
-
   resources :photos do
     resources :comments
   end
 
   resources :categories
 
-  devise_for :users
+  devise_for :users do
+    delete "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
