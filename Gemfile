@@ -32,6 +32,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 2.3.1.3'
 gem 'devise'
+gem 'carrierwave'
 
 
 # To use ActiveModel has_secure_password
