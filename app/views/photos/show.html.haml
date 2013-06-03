@@ -1,21 +1,17 @@
 %p#notice= notice
 
 %p
-  %b Title:
-  = @photo.title
+  = image_tag @photo.image.url, title: @photo.title
 %p
-  %b Image:
-  = image_tag @photo.image.url
-%p
-  %b User:
+  %b Uploaded by:
   = @photo.user.username
 %p
   %b Category:
   = @photo.category.name
-%p
-  %b Comments allowed:
-  = @photo.comments_allowed
 
 = link_to 'Edit', edit_photo_path(@photo)
-\|
+
 = link_to 'Back', photos_path
+
+%div
+  = link_to "New Comment", new_photo_comment_path(@photo)
