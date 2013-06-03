@@ -14,9 +14,9 @@
   - @photos.each do |photo|
     %tr
       %td= photo.title
-      %td= photo.image
-      %td= photo.user
-      %td= photo.category
+      %td= image_tag photo.image.thumb.url
+      %td= photo.user.username
+      %td= photo.category.name
       %td= photo.comments_allowed
       %td= link_to 'Show', photo
       %td= link_to 'Edit', edit_photo_path(photo)
