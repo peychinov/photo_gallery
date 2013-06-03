@@ -5,4 +5,6 @@ class Photo < ActiveRecord::Base
   has_many :comments
 
   attr_accessible :comments_allowed, :image, :title
+
+  validates_presence_of :title, :image
 end
