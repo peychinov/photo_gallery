@@ -32,6 +32,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 2.3.1.3'
 gem 'devise'
+gem "paperclip", "~> 3.0"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

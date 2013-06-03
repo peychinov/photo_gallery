@@ -1,17 +1,19 @@
 PhotoGallery::Application.routes.draw do
-  resources :comments
+  get "home/index"
 
+  get "home/about_us"
 
-  resources :photos
+  get "home/contact_us"
 
+  resources :users do
+
+  resources :photos do
+    resources :comments
+  end
 
   resources :categories
 
-
   devise_for :users
-
-  resources :users
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

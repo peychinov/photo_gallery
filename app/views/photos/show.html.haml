@@ -5,13 +5,13 @@
   = @photo.title
 %p
   %b Image:
-  = @photo.image
+  = image_tag @photo.image.url
 %p
   %b User:
-  = @photo.user
+  = @photo.user.username
 %p
   %b Category:
-  = @photo.category
+  = @photo.category.name
 %p
   %b Comments allowed:
   = @photo.comments_allowed
