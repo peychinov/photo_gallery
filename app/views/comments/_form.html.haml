@@ -1,6 +1,6 @@
 .comment-form
   = form_for comment, :remote => true do |f|
-    = f.input :body, :input_html => { :rows => "2" }, :label => false
-    = f.input :commentable_id, :as => :hidden, :value => comment.commentable_id
-    = f.input :commentable_type, :as => :hidden, :value => comment.commentable_type
-    = f.button :submit, :class => "btn btn-primary", :disable_with => "Submitting…"
+    = f.text_area :body, rows: 5, style: 'width: 300px'
+    = f.hidden_field :commentable_id, :value => comment.commentable_id
+    = f.hidden_field :commentable_type, :value => comment.commentable_type
+    = f.button :submit, class: "btn btn-primary", :disable_with => "Submitting…"

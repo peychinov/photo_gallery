@@ -5,6 +5,8 @@ PhotoGallery::Application.routes.draw do
 
   get "home/contact_us"
 
+  get "/homepage", to: 'photos#index'
+
   resources :photos
 
   resources :comments, only: [:create, :destroy]

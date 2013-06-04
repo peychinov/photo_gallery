@@ -9,11 +9,9 @@
   %b Category:
   = @photo.category.name
 
-= link_to 'Edit', edit_photo_path(@photo)
-
-= link_to 'Back', photos_path
+/ = link_to 'Edit', edit_photo_path(@photo), class: 'btn'
 
 .comments
-  %h2 Comments
-  = render :partial => 'comments/form', :locals => { comment => @new_comment }
+  %h4 Add your comment
+  = render :partial => 'comments/form', :locals => { comment: @new_comment }
   = render :partial => 'comments/comment', :collection => @comments, :as => :comment
