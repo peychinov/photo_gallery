@@ -1,27 +1,34 @@
-%h1 Listing photos
+/ %h1 Listing photos
 
-%table
-  %tr
-    %th Title
-    %th Image
-    %th User
-    %th Category
-    %th Comments allowed
-    %th
-    %th
-    %th
+/ %table
+/   %tr
+/     %th Title
+/     %th Image
+/     %th User
+/     %th Category
+/     %th Comments allowed
+/     %th
+/     %th
+/     %th
 
-  - @photos.each do |photo|
-    %tr
-      %td= link_to photo.title, photo
-      %td= image_tag photo.image.thumb.url
-      %td= photo.user.username
-      %td= photo.category.name
-      %td= photo.comments_allowed
-      %td= link_to 'Show', photo
-      %td= link_to 'Edit', edit_photo_path(photo)
-      %td= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+/   - @photos.each do |photo|
+/     %tr
+/       %td= link_to photo.title, photo
+/       %td= image_tag photo.image.thumb.url
+/       %td= photo.user.username
+/       %td= photo.category.name
+/       %td= photo.comments_allowed
+/       %td= link_to 'Show', photo
+/       %td= link_to 'Edit', edit_photo_path(photo)
+/       %td= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+- @photos.each do |photo|
+  %span{ style: 'padding: 15px;' }
+    = link_to image_tag(photo.image.thumb.url), photo, title: photo.title
 
 %br
+%br
 
-= link_to 'New Photo', new_photo_path
+= link_to 'Upload New Photo', new_photo_path, class: 'btn'
