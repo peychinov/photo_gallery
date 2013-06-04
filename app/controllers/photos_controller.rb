@@ -14,6 +14,8 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
+    @comments = @photo.comment_threads.order('created_at desc')
+    @new_comment = Comment.build_from(@photo, current_user, "")
 
     respond_to do |format|
       format.html # show.html.erb

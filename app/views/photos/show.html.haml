@@ -13,5 +13,7 @@
 
 = link_to 'Back', photos_path
 
-%div
-  = link_to "New Comment", new_photo_comment_path(@photo)
+.comments
+  %h2 Comments
+  = render :partial => 'comments/form', :locals => { comment => @new_comment }
+  = render :partial => 'comments/comment', :collection => @comments, :as => :comment
