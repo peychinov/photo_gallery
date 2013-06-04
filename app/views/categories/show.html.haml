@@ -3,7 +3,6 @@
 %p
   %b Name:
   = @category.name
+  = link_to 'Edit', edit_category_path(@category), class: 'btn'
 
-= link_to 'Edit', edit_category_path(@category)
-\|
-= link_to 'Back', categories_path
+= render partial: 'photos/photo', collection: @photos

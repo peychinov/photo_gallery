@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
+    @photos = Photo.where(category_id: @category)
 
     respond_to do |format|
       format.html # show.html.erb

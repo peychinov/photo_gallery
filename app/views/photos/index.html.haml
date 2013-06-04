@@ -24,9 +24,7 @@
 
 / %br
 
-- @photos.each do |photo|
-  %span{ style: 'padding: 15px;' }
-    = link_to image_tag(photo.image.thumb.url), photo, title: photo.title
+= render partial: 'photo', collection: @photos
 
 %br
 %br
