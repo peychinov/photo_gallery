@@ -6,6 +6,7 @@
     %th Last name
     %th Email
     %th Username
+    %th Admin ?
     %th
     %th
     %th
@@ -16,6 +17,7 @@
       %td= user.last_name
       %td= user.email
       %td= user.username
+      %td= user.is_admin
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
