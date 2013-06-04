@@ -1,6 +1,12 @@
+.sort_by
+  Sort:
+  = link_to 'by title', photos_path(sort: 'title', direction: @sort_direction)
+  = link_to 'by date', photos_path(sort: 'created_at', direction: @sort_direction)
+
 = render partial: 'photo', collection: @photos
 
 %br
 %br
 
-= link_to 'Upload New Photo', new_photo_path, class: 'btn'
+- if current_user
+  = link_to 'Upload New Photo', new_photo_path, class: 'btn'

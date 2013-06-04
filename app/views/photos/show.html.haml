@@ -3,8 +3,8 @@
 %p
   = image_tag @photo.image.url, title: @photo.title
 %p
-  %b Uploaded by:
-  = @photo.user.username
+  = render partial: 'photos/info', locals: { photo: @photo }
+
 %p
   %b Category:
   = @photo.category.name
@@ -13,7 +13,7 @@
   = link_to 'Remove', @photo, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn'
 
 - if @photo.comments_allowed
-  .comments
+  .comments{ style: 'width: 500px;' }
     - if current_user
       %h4 Add your comment
       = render :partial => 'comments/form', :locals => { comment: @new_comment }

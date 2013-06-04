@@ -1,9 +1,9 @@
 PhotoGallery::Application.routes.draw do
-  get "home/index"
+  get "/index", to: 'home#index'
 
-  get "home/about_us"
+  get "/about_us", to: 'home#about_us'
 
-  get "home/contact_us"
+  get "/contact_us", to: 'home#contact_us'
 
   get "/homepage", to: 'photos#index'
 

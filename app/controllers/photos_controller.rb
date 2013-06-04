@@ -4,7 +4,12 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    sort_column = params[:sort] || 'created_at'
+
+    # we want to toggle the direction
+    @sort_direction = params[:direction] == 'desc' ? 'asc' : 'desc'
+
+    @photos = Photo.order(sort_column + ' ' + @sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
